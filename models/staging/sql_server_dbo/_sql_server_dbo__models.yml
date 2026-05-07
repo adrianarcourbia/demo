@@ -43,11 +43,11 @@ models:
               arguments: 
                 to: ref('stg_sql_server_dbo__addresses')
                 field: address_id
-      - name: created_at_utc
+      - name: registered_at_utc
         description: Timestamp UTC del alta del usuario.
         data_tests:
           - not_null
-      - name: updated_at_utc
+      - name: last_updated_at_utc
         description: Timestamp UTC de la última modificación.
       - name: date_load
         description: Timestamp de la última sincronización de Fivetran.
@@ -299,5 +299,5 @@ unit_tests:
       rows:
         - {user_id: 'u1', first_name: 'Ana', last_name: 'García',
            email: 'ana@example.com', phone_number: null, address_id: 'a1',
-           created_at_utc: '2024-01-01', updated_at_utc: '2024-01-01',
+           registered_at_utc: '2024-01-01', last_updated_at_utc: '2024-01-01',
            date_load: '2024-01-01'}

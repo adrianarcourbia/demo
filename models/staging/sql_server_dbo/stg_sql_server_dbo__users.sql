@@ -30,9 +30,10 @@ renamed_casted as (
         , email
         , phone_number
         , address_id
-        , created_at                 as created_at_utc
-        , updated_at                 as updated_at_utc
-        , _fivetran_synced           as date_load
+        , created_at::timestamp_tz                                       as registered_at_utc
+        , updated_at::timestamp_tz                                       as last_updated_at_utc
+        , datediff('day', created_at, current_timestamp())               as days_since_registration
+        , _fivetran_synced::timestamp_tz                                 as date_load
     from src_users
 
 )

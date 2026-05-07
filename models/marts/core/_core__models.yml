@@ -107,7 +107,7 @@ models:
 
       - name: days_since_registration
         description: "Días transcurridos desde el alta hasta hoy."
-        data_type: number
+        data_type: number(38,0)
 
       - name: date_load
         description: "Timestamp de la última sincronización del source."
@@ -333,15 +333,15 @@ unit_tests:
         rows:
           - {user_id: 'u1', first_name: 'Ana',  last_name: 'García',
              email: 'ana@example.com',     phone_number: null, address_id: 'a1',
-             created_at_utc: '2024-01-01', updated_at_utc: '2024-01-01',
+             registered_at_utc: '2024-01-01', last_updated_at_utc: '2024-01-01',
              date_load: '2024-01-01'}
           - {user_id: 'u2', first_name: 'Luis', last_name: 'Pérez',
              email: 'luis@valid.es',       phone_number: null, address_id: 'a1',
-             created_at_utc: '2024-01-02', updated_at_utc: '2024-01-02',
+             registered_at_utc: '2024-01-02', last_updated_at_utc: '2024-01-02',
              date_load: '2024-01-02'}
           - {user_id: 'u3', first_name: 'Fail', last_name: 'Email',
              email: 'no-es-un-email',      phone_number: null, address_id: 'a1',
-             created_at_utc: '2024-01-03', updated_at_utc: '2024-01-03',
+             registered_at_utc: '2024-01-03', last_updated_at_utc: '2024-01-03',
              date_load: '2024-01-03'}
       - input: ref('stg_sql_server_dbo__addresses')
         rows:
