@@ -48,9 +48,9 @@ final as (
         , a.zipcode::varchar(20) as zipcode
         , a.state
         , a.country
-        , u.created_at_utc                                   as registered_at_utc
-        , u.updated_at_utc                                   as last_updated_at_utc
-        , datediff('day', u.created_at_utc, current_timestamp()) as days_since_registration
+        , u.registered_at_utc
+        , u.last_updated_at_utc
+        , datediff('day', u.registered_at_utc, current_timestamp())::number(38,0) as days_since_registration
         , u.date_load
     from users u
     left join addresses a on u.address_id = a.address_id
