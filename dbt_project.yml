@@ -13,7 +13,7 @@
 # IMPORTANTE: las configuraciones aquí pueden ser sobreescritas en cada
 # modelo concreto usando el bloque `{{ config(...) }}`.
 # ============================================================================
-# prueba
+# prueba DE DEV
 name: 'repo_demo'
 version: '1.0.0'
 config-version: 2
